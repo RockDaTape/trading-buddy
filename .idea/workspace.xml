@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f36c7a5a-f48b-4107-aaef-45d0f38b150d" name="Changes" comment="" />
+    <list default="true" id="f36c7a5a-f48b-4107-aaef-45d0f38b150d" name="Changes" comment="Update preview config &amp; README.">
+      <change afterPath="$PROJECT_DIR$/src/components/counter/counter.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/counter/counter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +32,7 @@
   }
 }]]></component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 7
@@ -76,8 +82,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1749724739942</updated>
-      <workItem from="1749724740979" duration="6825000" />
+      <workItem from="1749724740979" duration="9030000" />
     </task>
+    <task id="LOCAL-00001" summary="Update preview config &amp; README.">
+      <option name="closed" value="true" />
+      <created>1749731637206</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1749731637206</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,5 +108,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update preview config &amp; README." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update preview config &amp; README." />
   </component>
 </project>

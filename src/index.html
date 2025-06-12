@@ -1,107 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#000000" />
-  <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#000000"/>
+    <link rel="manifest" href="manifest.json">
+    <!-- global layout -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- counter component -->
+    <link rel="stylesheet" href="components/counter/counter.css">
 
-
-  <title>Trading Buddy</title>
-  <style>
-    body {
-  background-color: #2a292f;
-  font-family: sans-serif;
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;        /* center horizontally */
-}
-
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-    h1 {
-      font-size: 8rem;
-      margin: 20px 0 20px 0;  /* top, right, bottom, left */
-      color: #2962ff;
-    }
-
-    button {
-      font-size: 1.2rem;
-      padding: 1rem 2rem;
-      margin: 0.5rem;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      min-width: 100px;
-      flex-shrink: 0;
-    }
-
-    .decrement,
-    .reset {
-      background-color: #808080;
-      color: white;
-    }
-
-    .increment {
-      background-color: #089981;
-      color: white;
-    }
-
-    .button-row {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-
-  </style>
+    <title>Trading Buddy</title>
 </head>
 <body>
-  <main>
+<main>
     <h1 id="count">0</h1>
     <div class="button-row">
-      <button class="reset" onclick="resetCount()">Reset</button>
-      <button class="decrement" onclick="changeCount(-1)">−1</button>
-      <button class="increment" onclick="changeCount(1)">+1</button>
+        <button>Reset</button>
+        <button>−1</button>
+        <button>+1</button>
     </div>
-</div>
+</main>
 
-  </main>
-
-    <!-- Your tally counter logic -->
-  <script>
-    let count = 0;
-    const countDisplay = document.getElementById("count");
-
-    function changeCount(amount) {
-      count += amount;
-      updateDisplay();
-    }
-
-    function resetCount() {
-      count = 0;
-      updateDisplay();
-    }
-
-    function updateDisplay() {
-      countDisplay.textContent = count;
-    }
-
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js')
-        .then(() => console.log('Service Worker registered'))
-        .catch(error => console.error('Service Worker error:', error));
-    }
-  </script>
-
+<!-- register SW is in counter.js, so just include it: -->
+<script src="components/counter/counter.js"></script>
 </body>
+
 </html>
