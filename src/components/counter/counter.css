@@ -25,3 +25,21 @@ button {
     background-color: #808080;
     color: white;
 }
+
+/* Reset button – neutral gray */
+button.reset {
+    background-color: #666666;
+    color: #ffffff;
+}
+
+/* Decrement button – warning red */
+button.decrement {
+    background-color: #e91e63;
+    color: #ffffff;
+}
+
+/* Increment button – success green */
+button.increment {
+    background-color: #089981;
+    color: #ffffff;
+}
