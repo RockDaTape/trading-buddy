@@ -4,27 +4,42 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="theme-color" content="#000000"/>
-    <link rel="manifest" href="manifest.json">
-    <!-- global layout -->
-    <link rel="stylesheet" href="css/main.css">
-    <!-- counter component -->
-    <link rel="stylesheet" href="components/counter/counter.css">
+
+    <!-- PWA manifest -->
+    <link rel="manifest" href="manifest.json"/>
+
+    <!-- Global page styles -->
+    <link rel="stylesheet" href="css/main.css"/>
 
     <title>Trading Buddy</title>
 </head>
 <body>
 <main>
-    <h1 id="count">0</h1>
-    <div class="button-row">
-        <button class="reset">Reset</button>
-        <button class="decrement">−1</button>
-        <button class="increment">+1</button>
-    </div>
-
+    <!-- Counter will inject its HTML here -->
+    <div id="counter-root"></div>
 </main>
 
-<!-- register SW is in counter.js, so just include it: -->
-<script src="components/counter/counter.js"></script>
-</body>
+<!-- Dynamic component loader -->
+<script type="module">
+    async function loadComponent(name) {
+        // 1) Fetch and inject in one step (no redundant local var)
+        document
+            .getElementById(`${name}-root`)
+            .innerHTML = await fetch(`components/${name}/${name}.html`)
+            .then(r => r.text());
 
+        // 2) Load and append the component’s CSS
+        const link = document.createElement('link');
+        link.rel  = 'stylesheet';
+        link.href = `components/${name}/${name}.css`;
+        document.head.appendChild(link);
+
+        // 3) Import and execute its JS
+        await import(`./components/${name}/${name}.js`);
+    }
+
+    loadComponent('counter');
+</script>
+
+</body>
 </html>

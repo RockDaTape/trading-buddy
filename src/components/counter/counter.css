@@ -1,11 +1,14 @@
 /* counter.css */
+
 h1 {
     font-size: 8rem;
+    text-align: center;
     margin: 0 0 40px 0;
     color: #2962ff;
 }
 
 /* ─── BUTTONS ────────────────────────────────────────── */
+
 .button-row {
     display: flex;
     gap: 1rem;
