@@ -1,20 +1,21 @@
 // src/components/text-field/text-field.js
-// Load TipTap via ESM-style CDN
-import { Editor }     from 'https://cdn.jsdelivr.net/npm/@tiptap/core@2.0.0-beta.142/+esm';
-import StarterKit      from 'https://cdn.jsdelivr.net/npm/@tiptap/starter-kit@2.0.0-beta.20/+esm';
+
+import { Editor }   from '@tiptap/core';
+import StarterKit   from '@tiptap/starter-kit';
 
 export default function initTextField() {
+    // 1) Mount the editor into the <div id="text-field">
     const editor = new Editor({
         element: document.getElementById('text-field'),
         extensions: [StarterKit],
         content: '<p>Click here to start typing…</p>',
         onUpdate: ({ editor }) => {
-            // persist HTML if you like:
+            // 3) Persist content
             localStorage.setItem('textFieldContent', editor.getHTML());
         }
     });
 
-    // Load saved content from localStorage
+    // 2) Hydrate from localStorage if present
     const saved = localStorage.getItem('textFieldContent');
     if (saved) {
         editor.commands.setContent(saved);

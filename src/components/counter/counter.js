@@ -23,8 +23,10 @@ document.querySelector(".button-row").addEventListener("click", e => {
     }
 });
 
-// register service worker
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('../public/sw.js')
-        .catch(console.error);
+    navigator.serviceWorker.register(
+        new URL('../../../public/sw.js', import.meta.url)
+    ).catch(console.error);
 }
+
+
