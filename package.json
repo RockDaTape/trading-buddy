@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "@editorjs/editorjs": "^2.30.8",
+    "@editorjs/header": "^2.8.8",
+    "@editorjs/inline-code": "^1.5.2",
+    "@editorjs/list": "^2.0.8",
+    "@editorjs/quote": "^2.7.6"
+  },
+  "name": "trading-buddy",
+  "version": "1.0.0",
+  "description": "- **public/** → static assets (icons and sw.js)   - **src/** → source files (index.html, manifest.json)   - **.gitignore** → ignores IDE files, logs, etc.   - **README.md** → this file",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel src/index.html --open",
+    "build": "parcel build src/index.html --dist-dir public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RockDaTape/trading-buddy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/RockDaTape/trading-buddy/issues"
+  },
+  "homepage": "https://github.com/RockDaTape/trading-buddy#readme",
+  "devDependencies": {
+    "@parcel/packager-raw-url": "^2.15.2",
+    "@parcel/transformer-webmanifest": "^2.15.2",
+    "parcel": "^2.15.2"
+  }
+}

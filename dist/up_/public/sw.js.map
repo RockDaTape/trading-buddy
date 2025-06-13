@@ -1,0 +1,1 @@
+{"mappings":"AAAA,KAAK,gBAAgB,CAAC,SAAS,SAAS,KAAK;AACzC,iEAAiE;AACnE","sources":["public/sw.js"],"sourcesContent":["self.addEventListener('fetch', function(event) {\n    // No caching or intercepting here — just pass everything through\n  });\n  "],"names":[],"version":3,"file":"sw.js.map","sourceRoot":"/__parcel_source_root/"}

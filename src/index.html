@@ -15,31 +15,47 @@
 </head>
 <body>
 <main>
-    <!-- Counter will inject its HTML here -->
     <div id="counter-root"></div>
+    <div id="text-field-root"></div>
 </main>
 
 <!-- Dynamic component loader -->
 <script type="module">
-    async function loadComponent(name) {
-        // 1) Fetch and inject in one step (no redundant local var)
-        document
-            .getElementById(`${name}-root`)
-            .innerHTML = await fetch(`components/${name}/${name}.html`)
-            .then(r => r.text());
+    (async () => {
+        async function loadComponent(name) {
+            // 1) Fetch & inject HTML
+            document
+                .getElementById(`${name}-root`)
+                .innerHTML = await fetch(`components/${name}/${name}.html`)
+                .then(r => r.text());
 
-        // 2) Load and append the component’s CSS
-        const link = document.createElement('link');
-        link.rel  = 'stylesheet';
-        link.href = `components/${name}/${name}.css`;
-        document.head.appendChild(link);
+            // 2) Inject CSS
+            const link = document.createElement('link');
+            link.rel  = 'stylesheet';
+            link.href = `components/${name}/${name}.css`;
+            document.head.appendChild(link);
+        }
 
-        // 3) Import and execute its JS
-        await import(`./components/${name}/${name}.js`);
-    }
+        // 3) Load counter HTML/CSS, then its JS initializer
+        await loadComponent('counter');
+        {
+            const { default: initCounter } = await import(
+                './components/counter/counter.js'
+                );
+            initCounter();
+        }
 
-    loadComponent('counter');
+        // 4) Load text‐field HTML/CSS, then its JS initializer
+        await loadComponent('text-field');
+        {
+            const { default: initTextField } = await import(
+                './components/text-field/text-field.js'
+                );
+            initTextField();
+        }
+    })();
 </script>
+
 
 </body>
 </html>
